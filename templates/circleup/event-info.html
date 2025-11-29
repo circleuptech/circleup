@@ -318,7 +318,7 @@
   </div>
   
  <script>
-  const API_BASE = localStorage.getItem("API_BASE") || "http://127.0.0.1:8000/api" || "https://subtympanitic-unpartaken-eula.ngrok-free.dev/api";
+  const API_BASE = localStorage.getItem("API_BASE") || "https://subtympanitic-unpartaken-eula.ngrok-free.dev/api" || "http://127.0.0.1:8000/api";
   const ACCESS = localStorage.getItem("access");
   if (!ACCESS) { window.location.href = "/login/"; }
   const H = { Authorization: `Bearer ${ACCESS}`, "Content-Type": "application/json" };
