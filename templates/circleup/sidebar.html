@@ -395,7 +395,9 @@
     contentEl.innerHTML = '<div class="loading-notifications"><p>Loading notifications...</p></div>';
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/notifications/', {
+      // const response = await fetch('http://127.0.0.1:8000/api/notifications/', {
+      const response = await fetch('https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/notifications/', {
+
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -492,7 +494,8 @@
     if (!token) return;
 
     try {
-      await fetch(`http://127.0.0.1:8000/api/notifications/${notifId}/mark_as_read/`, {
+      // await fetch(`http://127.0.0.1:8000/api/notifications/${notifId}/mark_as_read/`, {
+      await fetch(`https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/notifications/${notifId}/mark_as_read/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -520,7 +523,8 @@
     if (!token) return;
 
     try {
-      await fetch('http://127.0.0.1:8000/api/notifications/mark_all_as_read/', {
+      // await fetch('http://127.0.0.1:8000/api/notifications/mark_all_as_read/', {
+      await fetch('https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/notifications/mark_all_as_read/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -568,7 +572,8 @@
         const token = localStorage.getItem('access');
         if (token) {
           try {
-            const response = await fetch('http://127.0.0.1:8000/api/notifications/', {
+            // const response = await fetch('http://127.0.0.1:8000/api/notifications/', {
+            const response = await fetch('https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/notifications/', {
               headers: { 'Authorization': `Bearer ${token}` }
             });
             if (response.ok) {
@@ -584,7 +589,8 @@
       // Page already loaded
       const token = localStorage.getItem('access');
       if (token) {
-        fetch('http://127.0.0.1:8000/api/notifications/', {
+        // fetch('http://127.0.0.1:8000/api/notifications/', {
+        fetch('https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/notifications/', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
         .then(r => r.ok ? r.json() : [])
@@ -633,7 +639,8 @@
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/users/profile/', {
+      const response = await fetch('https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/users/profile/', {
+      // const response = await fetch('http://127.0.0.1:8000/api/users/profile/', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -661,7 +668,8 @@
     if (user.profile_pic) {
       profilePicUrl = user.profile_pic.startsWith('http') 
         ? user.profile_pic 
-        : `http://127.0.0.1:8000${user.profile_pic}`;
+        // : `http://127.0.0.1:8000${user.profile_pic}`;
+        : `https://subtympanitic-unpartaken-eula.ngrok-free.dev${user.profile_pic}`;
     } else {
       profilePicUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.first_name + ' ' + user.last_name)}&size=80&background=667eea&color=fff`;
     }
@@ -711,7 +719,8 @@
       
       if (refreshToken && accessToken) {
         try {
-          await fetch('http://127.0.0.1:8000/api/auth/jwt/blacklist/', {
+          // await fetch('http://127.0.0.1:8000/api/auth/jwt/blacklist/', {
+          await fetch('https://subtympanitic-unpartaken-eula.ngrok-free.dev/api/auth/jwt/blacklist/', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

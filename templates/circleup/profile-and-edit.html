@@ -586,7 +586,7 @@ body {
     </div>
 
     <script>
-        const API_BASE = 'http://127.0.0.1:8000/api';
+        const API_BASE = 'http://127.0.0.1:8000/api' || "https://subtympanitic-unpartaken-eula.ngrok-free.dev/api";
         let currentUser = null;
         let coverFile = null;
         let avatarFile = null;
@@ -612,7 +612,8 @@ body {
         function getImageUrl(path) {
             if (!path) return null;
             if (path.startsWith('http')) return path;
-            return `http://127.0.0.1:8000${path}`;
+            // return `http://127.0.0.1:8000${path}`;
+            return `https://subtympanitic-unpartaken-eula.ngrok-free.dev/${path}`;
         }
 
         async function loadProfile() {
